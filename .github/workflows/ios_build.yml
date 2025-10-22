@@ -21,7 +21,7 @@ jobs:
       - name: Install Homebrew dependencies
         run: |
           brew update
-          brew install autoconf automake libtool pkg-config
+          brew install autoconf automake libtool pkg-config ios-deploy xcodeproj
 
       - name: Install Python dependencies
         run: |
@@ -33,6 +33,11 @@ jobs:
           git clone https://github.com/kivy/kivy-ios
           cd kivy-ios
           python toolchain.py build python3 kivy
+
+      - name: Prepare iOS platform
+        run: |
+          buildozer ios clean
+          buildozer ios platform update
 
       - name: Build iOS app
         run: |
