@@ -1,0 +1,200 @@
+1 warning
+running build_ext
+building 'jnius' extension
+/usr/bin/ccache /home/ngugi/.buildozer/android/platform/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang -target aarch64-linux-android21 -fomit-frame-pointer -march=armv8-a -fPIC -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -target aarch64-linux-android21 -fomit-frame-pointer -march=armv8-a -fPIC -I/home/ngugi/Music/小游戏/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/python3/arm64-v8a__ndk_target_21/python3/Include -DANDROID -I/home/ngugi/.buildozer/android/platform/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include -I/home/ngugi/Music/小游戏/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/python-installs/KvGame/arm64-v8a/include/python3.1 -fPIC -I/home/ngugi/Music/小游戏/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/Include -I/home/ngugi/Music/小游戏/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build -c jnius/jnius.c -o build/temp.linux-x86_64-3.11/jnius/jnius.o
+clang-14: error: no such file or directory: 'jnius/jnius.c'
+clang-14: error: no input files
+error: command '/usr/bin/ccache' failed with exit code 1
+
+
+  STDERR:
+
+[1m[INFO][0m:    pyjnius first build failed (as expected)
+[1m[INFO][0m:    Running cython where appropriate
+[1m[INFO][0m:    Cythonize jnius/jnius.pyx
+[1m[90m[DEBUG][39m[0m:   [90m->[0m running python3 -cimport sys; from Cython.Compiler.Main import setuptools_main; sys.exit(setuptools_main()); ./jnius/jnius.pyx[0m
+[1m[90m[DEBUG][39m[0m:   	warning: jnius/jnius.pyx:102:0: The 'IF' statement is deprecated and will be removed in a future Cython version. Consider using runtime conditions or C macros instead. See https://github.com/cython/cython/issues/4310
+[1m[90m[DEBUG][39m[0m:   	
+[1m[90m[DEBUG][39m[0m:   	Error compiling Cython file:
+[1m[90m[DEBUG][39m[0m:   	------------------------------------------------------------
+[1m[90m[DEBUG][39m[0m:   	...
+[1m[90m[DEBUG][39m[0m:   	            score += 10
+[1m[90m[DEBUG][39m[0m:   	            continue
+[1m[90m[DEBUG][39m[0m:   	
+[1m[90m[DEBUG][39m[0m:   	        if r == 'S' or r == 'I':
+[1m[90m[DEBUG][39m[0m:   	            if isinstance(arg, int) or (
+[1m[90m[DEBUG][39m[0m:   	                    (isinstance(arg, long) and arg < 2147483648)):
+[1m[90m[DEBUG][39m[0m:   	                                     ^
+[1m[90m[DEBUG][39m[0m:   	------------------------------------------------------------
+[1m[90m[DEBUG][39m[0m:   	
+[1m[90m[DEBUG][39m[0m:   	jnius/jnius_utils.pxi:323:37: undeclared name not builtin: long
+Exception in thread background thread for pid 77102:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ngugi/kivy_env/lib/python3.12/site-packages/sh.py", line 1641, in wrap
+    fn(*rgs, **kwargs)
+  File "/home/ngugi/kivy_env/lib/python3.12/site-packages/sh.py", line 2569, in background_thread
+    handle_exit_code(exit_code)
+  File "/home/ngugi/kivy_env/lib/python3.12/site-packages/sh.py", line 2269, in fn
+    return self.command.handle_command_exit_code(exit_code)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ngugi/kivy_env/lib/python3.12/site-packages/sh.py", line 869, in handle_command_exit_code
+    raise exc
+sh.ErrorReturnCode_1: 
+
+  RAN: /home/ngugi/kivy_env/bin/python3 '-cimport sys; from Cython.Compiler.Main import setuptools_main; sys.exit(setuptools_main());' ./jnius/jnius.pyx
+
+  STDOUT:
+warning: jnius/jnius.pyx:102:0: The 'IF' statement is deprecated and will be removed in a future Cython version. Consider using runtime conditions or C macros instead. See https://github.com/cython/cython/issues/4310
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+            score += 10
+            continue
+
+        if r == 'S' or r == 'I':
+            if isinstance(arg, int) or (
+                    (isinstance(arg, long) and arg < 2147483648)):
+                                     ^
+------------------------------------------------------------
+
+jnius/jnius_utils.pxi:323:37: undeclared name not builtin: long
+
+
+  STDERR:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/ngugi/Music/小游戏/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 1256, in <module>
+    main()
+  File "/home/ngugi/Music/小游戏/.buildozer/android/platform/python-for-android/pythonforandroid/entrypoints.py", line 18, in main
+    ToolchainCL()
+  File "/home/ngugi/Music/小游戏/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 685, in __init__
+    getattr(self, command)(args)
+  File "/home/ngugi/Music/小游戏/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 104, in wrapper_func
+    build_dist_from_args(ctx, dist, args)
+  File "/home/ngugi/Music/小游戏/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 163, in build_dist_from_args
+    build_recipes(build_order, python_modules, ctx,
+  File "/home/ngugi/Music/小游戏/.buildozer/android/platform/python-for-android/pythonforandroid/build.py", line 504, in build_recipes
+    recipe.build_arch(arch)
+  File "/home/ngugi/Music/小游戏/.buildozer/android/platform/python-for-android/pythonforandroid/recipe.py", line 1031, in build_arch
+    self.build_cython_components(arch)
+  File "/home/ngugi/Music/小游戏/.buildozer/android/platform/python-for-android/pythonforandroid/recipe.py", line 1056, in build_cython_components
+    self.cythonize_build(env=env)
+  File "/home/ngugi/Music/小游戏/.buildozer/android/platform/python-for-android/pythonforandroid/recipe.py", line 1104, in cythonize_build
+    self.cythonize_file(env, build_dir, join(root, filename))
+  File "/home/ngugi/Music/小游戏/.buildozer/android/platform/python-for-android/pythonforandroid/recipe.py", line 1093, in cythonize_file
+    shprint(python_command, "-c"
+  File "/home/ngugi/Music/小游戏/.buildozer/android/platform/python-for-android/pythonforandroid/logger.py", line 167, in shprint
+    for line in output:
+  File "/home/ngugi/kivy_env/lib/python3.12/site-packages/sh.py", line 915, in next
+    self.wait()
+  File "/home/ngugi/kivy_env/lib/python3.12/site-packages/sh.py", line 845, in wait
+    self.handle_command_exit_code(exit_code)
+  File "/home/ngugi/kivy_env/lib/python3.12/site-packages/sh.py", line 869, in handle_command_exit_code
+    raise exc
+sh.ErrorReturnCode_1: 
+
+  RAN: /home/ngugi/kivy_env/bin/python3 '-cimport sys; from Cython.Compiler.Main import setuptools_main; sys.exit(setuptools_main());' ./jnius/jnius.pyx
+
+  STDOUT:
+warning: jnius/jnius.pyx:102:0: The 'IF' statement is deprecated and will be removed in a future Cython version. Consider using runtime conditions or C macros instead. See https://github.com/cython/cython/issues/4310
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+            score += 10
+            continue
+
+        if r == 'S' or r == 'I':
+            if isinstance(arg, int) or (
+                    (isinstance(arg, long) and arg < 2147483648)):
+                                     ^
+------------------------------------------------------------
+
+jnius/jnius_utils.pxi:323:37: undeclared name not builtin: long
+
+
+  STDERR:
+
+
+# Command failed: ['/home/ngugi/kivy_env/bin/python3', '-m', 'pythonforandroid.toolchain', 'create', '--dist_name=KvGame', '--bootstrap=sdl2', '--requirements=python3,kivy', '--arch=arm64-v8a', '--arch=armeabi-v7a', '--copy-libs', '--color=always', '--storage-dir=/home/ngugi/Music/小游戏/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a', '--ndk-api=21', '--ignore-setup-py', '--debug']
+# ENVIRONMENT:
+#     SHELL = '/bin/bash'
+#     SESSION_MANAGER = 'local/ngugi-HP-ProBook-430-G3:@/tmp/.ICE-unix/16561,unix/ngugi-HP-ProBook-430-G3:/tmp/.ICE-unix/16561'
+#     QT_ACCESSIBILITY = '1'
+#     COLORTERM = 'truecolor'
+#     XDG_CONFIG_DIRS = '/etc/xdg/xdg-ubuntu:/etc/xdg'
+#     XDG_MENU_PREFIX = 'gnome-'
+#     GNOME_DESKTOP_SESSION_ID = 'this-is-deprecated'
+#     CONDA_EXE = '/home/ngugi/miniconda3/bin/conda'
+#     GNOME_SHELL_SESSION_MODE = 'ubuntu'
+#     SSH_AUTH_SOCK = '/run/user/1000/keyring/ssh'
+#     MEMORY_PRESSURE_WRITE = 'c29tZSAyMDAwMDAgMjAwMDAwMAA='
+#     XMODIFIERS = '@im=ibus'
+#     DESKTOP_SESSION = 'ubuntu'
+#     MUJOCO_PY_MUJOCO_PATH = '/home/ngugi/.mujoco/mujoco210'
+#     GTK_MODULES = 'gail:atk-bridge'
+#     PWD = '/home/ngugi/Music/小游戏'
+#     LOGNAME = 'ngugi'
+#     XDG_SESSION_DESKTOP = 'ubuntu'
+#     XDG_SESSION_TYPE = 'wayland'
+#     SYSTEMD_EXEC_PID = '16613'
+#     MUJOCO_GL = 'osmesa'
+#     XAUTHORITY = '/run/user/1000/.mutter-Xwaylandauth.AWH1E3'
+#     HOME = '/home/ngugi'
+#     USERNAME = 'ngugi'
+#     IM_CONFIG_PHASE = '1'
+#     LANG = 'en_US.UTF-8'
+#     LS_COLORS = 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:'
+#     XDG_CURRENT_DESKTOP = 'ubuntu:GNOME'
+#     VIRTUAL_ENV = '/home/ngugi/kivy_env'
+#     MEMORY_PRESSURE_WATCH = '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure'
+#     VTE_VERSION = '7600'
+#     WAYLAND_DISPLAY = 'wayland-0'
+#     GNOME_TERMINAL_SCREEN = '/org/gnome/Terminal/screen/399106d0_2740_44d9_8452_81145584313c'
+#     DOTNET_BUNDLE_EXTRACT_BASE_DIR = '/home/ngugi/.cache/dotnet_bundle_extract'
+#     GNOME_SETUP_DISPLAY = ':1'
+#     LESSCLOSE = '/usr/bin/lesspipe %s %s'
+#     XDG_SESSION_CLASS = 'user'
+#     ANDROID_HOME = '/home/ngugi/Android'
+#     TERM = 'xterm-256color'
+#     LESSOPEN = '| /usr/bin/lesspipe %s'
+#     LIBVIRT_DEFAULT_URI = 'qemu:///system'
+#     USER = 'ngugi'
+#     GNOME_TERMINAL_SERVICE = ':1.133'
+#     CONDA_SHLVL = '0'
+#     CLUTTER_DISABLE_MIPMAPPED_TEXT = '1'
+#     DISPLAY = ':0'
+#     SHLVL = '1'
+#     GSM_SKIP_SSH_AGENT_WORKAROUND = 'true'
+#     QT_IM_MODULE = 'ibus'
+#     VIRTUAL_ENV_PROMPT = '(kivy_env) '
+#     CONDA_PYTHON_EXE = '/home/ngugi/miniconda3/bin/python'
+#     LD_LIBRARY_PATH = ':/home/ngugi/.mujoco/mujoco210/bin:/usr/lib/nvidia'
+#     XDG_RUNTIME_DIR = '/run/user/1000'
+#     PS1 = ('(kivy_env) \\[\\e]0;\\u@\\h: '
+ '\\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ ')
+#     DEBUGINFOD_URLS = 'https://debuginfod.ubuntu.com '
+#     XDG_DATA_DIRS = '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'
+#     PATH = '/home/ngugi/.buildozer/android/platform/apache-ant-1.9.4/bin:/home/ngugi/kivy_env/bin:/home/ngugi/miniconda3/condabin:/home/ngugi/Android/cmdline-tools/latest/bin:/home/ngugi/Android/platform-tools:/usr/lib/dotnet/dotnet:/home/ngugi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/ngugi/.dotnet/tools:/home/ngugi/.local/bin:/home/ngugi/.local/bin'
+#     GDMSESSION = 'ubuntu'
+#     DBUS_SESSION_BUS_ADDRESS = 'unix:path=/run/user/1000/bus'
+#     OLDPWD = '/home/ngugi'
+#     _ = '/home/ngugi/kivy_env/bin/buildozer'
+#     PACKAGES_PATH = '/home/ngugi/.buildozer/android/packages'
+#     ANDROIDSDK = '/home/ngugi/.buildozer/android/platform/android-sdk'
+#     ANDROIDNDK = '/home/ngugi/.buildozer/android/platform/android-ndk-r25b'
+#     ANDROIDAPI = '31'
+#     ANDROIDMINAPI = '21'
+# 
+# Buildozer failed to execute the last command
+# The error might be hidden in the log above this error
+# Please read the full log, and search for it before
+# raising an issue with buildozer itself.
+# In case of a bug report, please add a full log with log_level = 2
