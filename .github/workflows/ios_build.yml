@@ -34,18 +34,20 @@ jobs:
           cd kivy-ios
           python toolchain.py build python3 kivy
 
-      - name: Prepare iOS platform
+      - name: Prepare Buildozer environment
         run: |
           buildozer init || true
           buildozer ios clean
-          buildozer ios platform update
 
-      - name: Build iOS app (debug)
+      - name: Build iOS app
         env:
           LANG: en_US.UTF-8
           LC_ALL: en_US.UTF-8
         run: |
           buildozer ios debug
+
+      - name: List build output
+        run: ls -R bin/ || true
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
